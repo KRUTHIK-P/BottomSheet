@@ -1,0 +1,442 @@
+Index: app/src/main/res/drawable/bottom_sheet_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/bottom_sheet_background.xml b/app/src/main/res/drawable/bottom_sheet_background.xml
+new file mode 100644
+--- /dev/null	(date 1675233326952)
++++ b/app/src/main/res/drawable/bottom_sheet_background.xml	(date 1675233326952)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++
++    <solid android:color="@color/white"/>
++
++    <corners android:topLeftRadius="20dp" android:topRightRadius="20dp"/>
++
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	(revision 1d93b9b201d26d23df2b54167ac1fe9725fde394)
++++ b/app/src/main/res/values/themes.xml	(date 1675241171761)
+@@ -1,6 +1,6 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Theme.BottomSheet" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
++    <style name="Theme.BottomSheet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+         <!-- Primary brand color. -->
+         <item name="colorPrimary">@color/purple_500</item>
+         <item name="colorPrimaryVariant">@color/purple_700</item>
+@@ -12,5 +12,16 @@
+         <!-- Status bar color. -->
+         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+         <!-- Customize your theme here. -->
++        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
++    </style>
++
++    <style name="AppBottomSheetDialogTheme"
++        parent="Theme.Design.Light.BottomSheetDialog">
++        <item name="bottomSheetStyle">@style/AppModalStyle</item>
++    </style>
++
++    <style name="AppModalStyle"
++        parent="Widget.Design.BottomSheet.Modal">
++        <item name="android:background">@drawable/bottom_sheet_background</item>
+     </style>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_baseline_camera_enhance_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_baseline_camera_enhance_24.xml b/app/src/main/res/drawable/ic_baseline_camera_enhance_24.xml
+new file mode 100644
+--- /dev/null	(date 1675231517425)
++++ b/app/src/main/res/drawable/ic_baseline_camera_enhance_24.xml	(date 1675231517425)
+@@ -0,0 +1,6 @@
++<vector android:height="24dp" android:tint="#000000"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M9,3L7.17,5L4,5c-1.1,0 -2,0.9 -2,2v12c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2L22,7c0,-1.1 -0.9,-2 -2,-2h-3.17L15,3L9,3zM12,18c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5z"/>
++    <path android:fillColor="@android:color/white" android:pathData="M12,17l1.25,-2.75L16,13l-2.75,-1.25L12,9l-1.25,2.75L8,13l2.75,1.25z"/>
++</vector>
+Index: app/src/main/res/drawable/ic_baseline_insert_photo_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_baseline_insert_photo_24.xml b/app/src/main/res/drawable/ic_baseline_insert_photo_24.xml
+new file mode 100644
+--- /dev/null	(date 1675231565285)
++++ b/app/src/main/res/drawable/ic_baseline_insert_photo_24.xml	(date 1675231565285)
+@@ -0,0 +1,5 @@
++<vector android:height="24dp" android:tint="#000000"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"/>
++</vector>
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1675240111808)
++++ b/.idea/vcs.xml	(date 1675240111808)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/bottomsheet/BottomSheetFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/bottomsheet/BottomSheetFragment.kt b/app/src/main/java/com/example/bottomsheet/BottomSheetFragment.kt
+new file mode 100644
+--- /dev/null	(date 1675240716917)
++++ b/app/src/main/java/com/example/bottomsheet/BottomSheetFragment.kt	(date 1675240716917)
+@@ -0,0 +1,136 @@
++package com.example.bottomsheet
++
++import android.Manifest
++import android.app.Activity
++import android.content.Intent
++import android.content.pm.PackageManager
++import android.graphics.Bitmap
++import android.net.Uri
++import android.os.Bundle
++import android.provider.MediaStore
++import android.util.Log
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import android.widget.ImageView
++import androidx.core.app.ActivityCompat
++import androidx.core.content.ContextCompat
++import androidx.fragment.app.FragmentActivity
++import com.example.bottomsheet.databinding.FragmentBottomSheetBinding
++
++import com.google.android.material.bottomsheet.BottomSheetDialogFragment
++
++
++class BottomSheetFragment(private val image: ImageView) : BottomSheetDialogFragment() {
++
++    private var _binding: FragmentBottomSheetBinding? = null
++
++    // This property is only valid between onCreateView and
++// onDestroyView.
++    private val binding get() = _binding!!
++    override fun onCreateView(
++        inflater: LayoutInflater, container: ViewGroup?,
++        savedInstanceState: Bundle?
++    ): View? {
++        // Inflate the layout for this fragment
++        _binding = FragmentBottomSheetBinding.inflate(inflater, container, false)
++        val view = binding.root
++
++        binding.cameraLyt.setOnClickListener {
++            if (checkPermissions(activity, 2)) {
++                Log.d("permission", "granted")
++
++                startActivityForResult(Intent(MediaStore.ACTION_IMAGE_CAPTURE), 2)
++            }
++        }
++
++        binding.galleryLyt.setOnClickListener {
++            if (checkPermissions(activity, 1)) {
++                Log.d("permission", "granted")
++                val intent = Intent()
++                intent.apply {
++                    type = "image/*"
++                    putExtra(Intent.ACTION_GET_CONTENT, true)
++                    action = Intent.ACTION_GET_CONTENT
++                }
++
++                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1)
++            }
++        }
++
++        return view
++    }
++
++
++    private fun checkPermissions(activity: FragmentActivity?, i: Int): Boolean {
++        return when (i) {
++            1 -> if (ContextCompat.checkSelfPermission(
++                    binding.root.context,
++                    Manifest.permission.READ_EXTERNAL_STORAGE
++                ) != PackageManager.PERMISSION_GRANTED
++            ) {
++                if (activity != null) {
++                    ActivityCompat.requestPermissions(
++                        activity,
++                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
++                        PackageManager.PERMISSION_GRANTED
++                    )
++                }
++
++                false
++            } else {
++                true
++            }
++
++            else -> if (ContextCompat.checkSelfPermission(
++                    binding.root.context,
++                    Manifest.permission.CAMERA
++                ) != PackageManager.PERMISSION_GRANTED
++            ) {
++                if (activity != null) {
++                    ActivityCompat.requestPermissions(
++                        activity,
++                        arrayOf(Manifest.permission.CAMERA),
++                        PackageManager.PERMISSION_GRANTED
++                    )
++                }
++
++                false
++            } else {
++                true
++            }
++        }
++    }
++
++
++    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
++        super.onActivityResult(requestCode, resultCode, data)
++
++        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
++            // Get the url of the image from data
++
++            // Get the url of the image from data
++            val selectedImageUri: Uri? = data?.data
++            if (null != selectedImageUri) {
++                // update the preview image in the layout
++                image.setImageURI(selectedImageUri)
++                this.dismiss()
++            }
++        }
++
++        if (requestCode == 2 && resultCode == Activity.RESULT_OK) {
++
++            val capturedImage = data?.extras?.get("data") as Bitmap
++
++            image.setImageBitmap(capturedImage)
++            this.dismiss()
++
++        }
++    }
++
++    override fun onDestroyView() {
++        super.onDestroyView()
++        _binding = null
++    }
++
++}
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 1d93b9b201d26d23df2b54167ac1fe9725fde394)
++++ b/app/build.gradle	(date 1675240747477)
+@@ -5,7 +5,7 @@
+ 
+ android {
+     namespace 'com.example.bottomsheet'
+-    compileSdk 32
++    compileSdk 33
+ 
+     defaultConfig {
+         applicationId "com.example.bottomsheet"
+@@ -30,6 +30,10 @@
+     kotlinOptions {
+         jvmTarget = '1.8'
+     }
++
++    buildFeatures {
++        viewBinding true
++    }
+ }
+ 
+ dependencies {
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 1d93b9b201d26d23df2b54167ac1fe9725fde394)
++++ b/app/src/main/AndroidManifest.xml	(date 1675241260871)
+@@ -2,6 +2,9 @@
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools">
+ 
++    <uses-permission android:name="android.permission.CAMERA"/>
++    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
++
+     <application
+         android:allowBackup="true"
+         android:dataExtractionRules="@xml/data_extraction_rules"
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision 1d93b9b201d26d23df2b54167ac1fe9725fde394)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1675240716897)
+@@ -6,13 +6,25 @@
+     android:layout_height="match_parent"
+     tools:context=".MainActivity">
+ 
+-    <TextView
++
++    <ImageView
++        android:id="@+id/image"
++        android:layout_width="150dp"
++        android:layout_height="150dp"
++        android:layout_marginBottom="10dp"
++        app:layout_constraintBottom_toTopOf="@id/add_image_btn"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"/>
++
++    <Button
++        android:id="@+id/add_image_btn"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="Hello World!"
++        android:text="Add Image"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+ 
++
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/bottomsheet/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/bottomsheet/MainActivity.kt b/app/src/main/java/com/example/bottomsheet/MainActivity.kt
+--- a/app/src/main/java/com/example/bottomsheet/MainActivity.kt	(revision 1d93b9b201d26d23df2b54167ac1fe9725fde394)
++++ b/app/src/main/java/com/example/bottomsheet/MainActivity.kt	(date 1675240603905)
+@@ -2,10 +2,25 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import com.example.bottomsheet.databinding.ActivityMainBinding
++
+ 
+ class MainActivity : AppCompatActivity() {
++    private lateinit var binding: ActivityMainBinding
++
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        setContentView(R.layout.activity_main)
++        binding = ActivityMainBinding.inflate(layoutInflater)
++        val view = binding.root
++        setContentView(view)
++
++        binding.addImageBtn.setOnClickListener {
++
++            val bottomSheet = BottomSheetFragment(binding.image)
++            bottomSheet.show(supportFragmentManager, "TAG")
++
++        }
+     }
++
++
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_bottom_sheet.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_bottom_sheet.xml b/app/src/main/res/layout/fragment_bottom_sheet.xml
+new file mode 100644
+--- /dev/null	(date 1675240716906)
++++ b/app/src/main/res/layout/fragment_bottom_sheet.xml	(date 1675240716906)
+@@ -0,0 +1,64 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="horizontal"
++    android:background="@drawable/bottom_sheet_background"
++    tools:context=".BottomSheetFragment">
++
++    <LinearLayout
++        android:id="@+id/camera_lyt"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_margin="30dp"
++        android:orientation="vertical">
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="100dp"
++            android:layout_height="100dp"
++            app:cardCornerRadius="100dp">
++
++            <ImageView
++                android:layout_width="50dp"
++                android:layout_height="50dp"
++                android:layout_gravity="center"
++                android:src="@drawable/ic_baseline_camera_enhance_24" />
++        </androidx.cardview.widget.CardView>
++
++        <TextView
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Camera"
++            android:layout_gravity="center"
++            android:layout_marginTop="10dp"/>
++    </LinearLayout>
++
++    <LinearLayout
++        android:id="@+id/gallery_lyt"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="30dp"
++        android:orientation="vertical">
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="100dp"
++            android:layout_height="100dp"
++            app:cardCornerRadius="100dp">
++
++            <ImageView
++                android:layout_width="50dp"
++                android:layout_height="50dp"
++                android:layout_gravity="center"
++                android:src="@drawable/ic_baseline_insert_photo_24" />
++        </androidx.cardview.widget.CardView>
++
++        <TextView
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Gallery"
++            android:layout_gravity="center"
++            android:layout_marginTop="10dp"/>
++    </LinearLayout>
++</LinearLayout>
+\ No newline at end of file
