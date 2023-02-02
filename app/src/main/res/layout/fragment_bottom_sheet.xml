@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/bottom_sheet_background"
+    tools:context=".fragments.BottomSheet">
+
+    <LinearLayout
+        android:id="@+id/camera_lyt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_30dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            app:cardCornerRadius="@dimen/_100dp">
+
+            <ImageView
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_camera_enhance_24"
+                android:contentDescription="@string/camera" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/camera"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gallery_lyt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            app:cardCornerRadius="@dimen/_100dp">
+
+            <ImageView
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_insert_photo_24"
+                android:contentDescription="@string/gallery" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gallery"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10dp"/>
+    </LinearLayout>
+</LinearLayout>
