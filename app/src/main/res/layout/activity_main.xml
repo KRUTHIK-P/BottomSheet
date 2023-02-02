@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/add_image_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/add_image" />
 
     <Button
         android:id="@+id/add_image_btn"

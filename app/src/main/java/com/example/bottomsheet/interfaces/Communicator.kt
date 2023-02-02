@@ -4,6 +4,6 @@ import android.graphics.Bitmap
 import android.net.Uri
 
 interface Communicator {
-    fun capturedImage(image: Bitmap)
-    fun selectedImage(image: Uri)
+    fun onCapturedImage(image: Bitmap)
+    fun onSelectedImage(image: Uri)
 }

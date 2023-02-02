@@ -4,9 +4,10 @@ import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.bottomsheet.fragments.BottomSheetFragment
+import com.example.bottomsheet.fragments.BottomSheet
 import com.example.bottomsheet.interfaces.Communicator
 import com.example.bottomsheet.databinding.ActivityMainBinding
+import com.example.bottomsheet.utils.Constants
 
 
 class MainActivity : AppCompatActivity(), Communicator {
@@ -19,16 +20,16 @@ class MainActivity : AppCompatActivity(), Communicator {
         setContentView(view)
 
         binding.addImageBtn.setOnClickListener {
-            val bottomSheet = BottomSheetFragment()
-            bottomSheet.show(supportFragmentManager, "TAG")
+            val bottomSheet = BottomSheet()
+            bottomSheet.show(supportFragmentManager, Constants.TAG)
         }
     }
 
-    override fun capturedImage(image: Bitmap) {
+    override fun onCapturedImage(image: Bitmap) {
         binding.image.setImageBitmap(image)
     }
 
-    override fun selectedImage(image: Uri) {
+    override fun onSelectedImage(image: Uri) {
         binding.image.setImageURI(image)
     }
 
